@@ -1,5 +1,7 @@
 CREATE DATABASE JewelleryOrder
-
+go
+use JewelleryOrder
+go
 CREATE TABLE Role (
     RoleID INT PRIMARY KEY,
     Name NVARCHAR(255) NOT NULL
@@ -79,6 +81,8 @@ CREATE TABLE Requirements (
     StonePriceAtMoment DECIMAL(18, 2),
     MatchingFee DECIMAL(18, 2),
     TotalMoney DECIMAL(18, 2),
+	CustomerNote NVARCHAR(255),
+	SellerNote NVARCHAR(255),
     DesignID INT,
     FOREIGN KEY (DesignID) REFERENCES Design(DesignID)
 );
@@ -90,7 +94,8 @@ CREATE TABLE Payment (
     CompletedAt DATE,
     CustomerID INT,
     RequirementsID INT,
-    FOREIGN KEY (RequirementsID) REFERENCES Requirements(RequirementsID)
+    FOREIGN KEY (RequirementsID) REFERENCES Requirements(RequirementsID),
+	FOREIGN KEY (CustomerID) REFERENCES Users(UsersID)
 );
 
 CREATE TABLE WarrantyCard (
