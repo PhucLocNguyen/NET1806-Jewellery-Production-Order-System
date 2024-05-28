@@ -7,7 +7,7 @@ namespace Repository.Entity
     {
         public int WarrantyCardId { get; set; }
 
-        public int RequirementsId { get; set; }
+        public int RequirementId { get; set; }
 
         public DateOnly? DateCreated { get; set; }
 
