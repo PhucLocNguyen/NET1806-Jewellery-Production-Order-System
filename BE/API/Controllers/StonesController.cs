@@ -1,90 +1,66 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using BusinessObject;
-using Services;
+﻿using API.Model.StonesModel;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
+using Repository;
+using Repository.Entity;
+using System.Drawing;
 namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class StonesController : ControllerBase
     {
-        private readonly IStoneService stoneServices;
+        private readonly UnitOfWork _unitOfWork;
 
-        public StonesController()
+        public StonesController(UnitOfWork unitOfWork)
         {
-            if(stoneServices == null)
-            {
-                stoneServices = new StoneService();
-            }
+            _unitOfWork = unitOfWork;
         }
 
-        // GET: api/Stones
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Stone>>> GetStones()
-        {
-            return await stoneServices.GetStones();
-        }
-
-        // GET: api/Stones/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Stone>> GetStone(int id)
+        public IActionResult GetStonesById(int id)
         {
-            var stone = await stoneServices.GetStone(id);
-
-            if (stone == null)
-            {
-                return NotFound();
-            }
-
-            return stone;
+            var Stones = _unitOfWork.StoneRepository.GetByID(id);
+            return Ok(Stones);
         }
-
-        // PUT: api/Stones/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutStone(int id, Stone stoneRequest)
-        {
-            if (id != stoneRequest.StonesId)
-            {
-                return BadRequest();
-            }
-
-            var stone = stoneServices.UpdateStone(stoneRequest, id);
-            if (stone == null)
-            {
-                return StatusCode(500);
-            }
-
-
-            return Ok(stone);
-        }
-
-        // POST: api/Stones
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Stone>> PostStone(Stone stone)
+        public IActionResult CreateStones(RequestCreateStonesModel requestCreateStonesModel)
         {
-            stoneServices.AddStone(stone);
-
-            return CreatedAtAction("GetStone", new { id = stone.StonesId }, stone);
-        }
-
-        // DELETE: api/Stones/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteStone(int id)
-        {
-            var result = await stoneServices.DeleteStone(id);
-            if (!result)
+            var Stones = new Stones()
             {
-                return NotFound();
-            }
-
+                Kind = requestCreateStonesModel.Kind,
+                Price = requestCreateStonesModel.Price,
+                Quantity = requestCreateStonesModel.Quantity,
+                Size = requestCreateStonesModel.Size,
+            };
+            _unitOfWork.StoneRepository.Insert(Stones);
+            _unitOfWork.Save();
             return Ok();
         }
-
-       /* private bool StoneExists(int id)
+        [HttpPut]
+        public IActionResult UpdateStones(int id, RequestCreateStonesModel requestCreateStonesModel)
         {
-            return _context.Stones.Any(e => e.StonesId == id);
-        }*/
+            var existedStonesUpdate = _unitOfWork.StoneRepository.GetByID(id);
+            if(existedStonesUpdate == null)
+            {
+                return NotFound();
+            }
+            existedStonesUpdate.Kind = requestCreateStonesModel.Kind;
+            existedStonesUpdate.Price = requestCreateStonesModel.Price;
+            existedStonesUpdate.Quantity = requestCreateStonesModel.Quantity;
+            existedStonesUpdate.Size = requestCreateStonesModel.Size;
+            _unitOfWork.StoneRepository.Update(existedStonesUpdate);
+            _unitOfWork.Save();
+            return Ok();
+        }
+        [HttpDelete]
+        public IActionResult DeleteStones(int id)
+        {
+            var existedStonesUpdate = _unitOfWork.StoneRepository.GetByID(id);
+            _unitOfWork.StoneRepository.Delete(existedStonesUpdate);
+            _unitOfWork.Save();
+            return Ok();
+        }
     }
 }

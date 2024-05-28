@@ -7,16 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Services\Services.csproj" />
+    <Folder Include="Model\HaveModel\" />
+    <Folder Include="Model\MasterGemstoneModel\" />
+    <Folder Include="Model\MaterialModel\" />
+    <Folder Include="Model\PaymentModel\" />
+    <Folder Include="Model\RequirementModel\" />
+    <Folder Include="Model\RoleModel\" />
+    <Folder Include="Model\TypeOfJewellryModel\" />
+    <Folder Include="Model\UserModel\" />
+    <Folder Include="Model\WarrantyCardModel\" />
+    <Folder Include="Model\DesignModel\" />
+    <Folder Include="Model\BlogModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
 </Project>
