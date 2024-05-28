@@ -56,7 +56,12 @@ namespace Repository.Entity
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Have>()
-            .HasKey(e => new { e.WarrantyCardId, e.RequirementsId });
+            .HasKey(e => new { e.WarrantyCardId, e.RequirementId });
+
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<UserRequirement>()
+            .HasKey(e => new { e.UserId, e.RequirementId });
 
             base.OnModelCreating(modelBuilder);
         }
