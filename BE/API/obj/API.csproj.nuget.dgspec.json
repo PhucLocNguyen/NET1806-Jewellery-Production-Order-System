@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\API\\API.csproj": {}
+    "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\API\\API.csproj": {
+    "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\API\\API.csproj",
+        "projectUniqueName": "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\API\\obj\\",
+        "projectPath": "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\Repository\\Repository.csproj"
+              "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\Repository\\Repository.csproj": {
+                "projectPath": "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\Repository\\Repository.csproj"
               }
             }
           }
@@ -50,6 +50,22 @@
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
             },
@@ -81,17 +97,17 @@
         }
       }
     },
-    "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\Repository\\Repository.csproj": {
+    "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\Repository\\Repository.csproj",
+        "projectUniqueName": "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\Repository\\obj\\",
+        "projectPath": "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

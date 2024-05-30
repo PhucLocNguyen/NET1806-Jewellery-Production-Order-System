@@ -4,6 +4,7 @@ use JewelleryOrder
 go
 
 
+
 CREATE TABLE Role (
     RoleID INT IDENTITY(1,1) PRIMARY KEY,
     Name NVARCHAR(255) NOT NULL

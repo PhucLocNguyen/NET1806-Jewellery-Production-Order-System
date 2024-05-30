@@ -4106,19 +4106,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\ACER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\Repository\\Repository.csproj",
+      "projectUniqueName": "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\Repository\\Repository.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\SWP391Poject\\Repository\\obj\\",
+      "projectPath": "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\Repository\\Repository.csproj",
+      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+      "outputPath": "D:\\HocTap\\AspDotNet_Practice\\NET1806-Jewellery-Production-Order-System\\BE\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
