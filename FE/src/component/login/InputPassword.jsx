@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import {Visibility, VisibilityOff} from '@mui/icons-material';
-import {FormControl, OutlinedInput, InputAdornment, IconButton, InputLabel} from '@mui/material'
+
+import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { FormControl, OutlinedInput, InputAdornment, IconButton, InputLabel } from '@mui/material'
 
 function InputPassword() {
     const [showPassword, setShowPassword] = useState(false);
@@ -12,7 +13,8 @@ function InputPassword() {
     };
 
     return (
-        <FormControl sx={{ my: '8px', width: '100%'}} variant="outlined">
+        <FormControl sx={{ my: '8px', width: '100%' }} variant="outlined">
+
             <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
             <OutlinedInput
                 id="outlined-adornment-password"
