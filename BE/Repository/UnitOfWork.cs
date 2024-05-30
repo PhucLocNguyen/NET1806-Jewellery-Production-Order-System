@@ -22,7 +22,7 @@ namespace Repository
         private GenericRepository<Requirement> _requirement;
         private GenericRepository<Role> _role;
         private GenericRepository<Stones> _stone;
-        private GenericRepository<TypeOfJewellry> _typeOfJewellry;
+        private GenericRepository<TypeOfJewellery> _typeOfJewellry;
         private GenericRepository<User> _user;
         private GenericRepository<WarrantyCard> _warrantyCard;
 
@@ -140,13 +140,13 @@ namespace Repository
             }
 
         }
-        public GenericRepository<TypeOfJewellry> TypeOfJewellryRepository
+        public GenericRepository<TypeOfJewellery> TypeOfJewellryRepository
         {
             get
             {
                 if (_typeOfJewellry == null)
                 {
-                    this._typeOfJewellry = new GenericRepository<TypeOfJewellry>(_context);
+                    this._typeOfJewellry = new GenericRepository<TypeOfJewellery>(_context);
                 }
                 return _typeOfJewellry;
             }

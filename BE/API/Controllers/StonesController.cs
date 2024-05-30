@@ -1,10 +1,10 @@
 ﻿using API.Model.StonesModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
 using Repository;
 using Repository.Entity;
 using System.Drawing;
+
 namespace API.Controllers
 {
     [Route("api/[controller]")]
@@ -21,19 +21,17 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public IActionResult GetStonesById(int id)
         {
-            var Stones = _unitOfWork.StoneRepository.GetByID(id);
+            var Stones = _unitOfWork.StoneRepository.GetByID(id,p=>p.Designs);
+            if(Stones == null)
+            {
+                return NotFound();
+            }
             return Ok(Stones);
         }
         [HttpPost]
         public IActionResult CreateStones(RequestCreateStonesModel requestCreateStonesModel)
         {
-            var Stones = new Stones()
-            {
-                Kind = requestCreateStonesModel.Kind,
-                Price = requestCreateStonesModel.Price,
-                Quantity = requestCreateStonesModel.Quantity,
-                Size = requestCreateStonesModel.Size,
-            };
+            var Stones = requestCreateStonesModel.toStonesEntity();
             _unitOfWork.StoneRepository.Insert(Stones);
             _unitOfWork.Save();
             return Ok();
@@ -42,7 +40,7 @@ namespace API.Controllers
         public IActionResult UpdateStones(int id, RequestCreateStonesModel requestCreateStonesModel)
         {
             var existedStonesUpdate = _unitOfWork.StoneRepository.GetByID(id);
-            if(existedStonesUpdate == null)
+            if (existedStonesUpdate == null)
             {
                 return NotFound();
             }
@@ -58,6 +56,10 @@ namespace API.Controllers
         public IActionResult DeleteStones(int id)
         {
             var existedStonesUpdate = _unitOfWork.StoneRepository.GetByID(id);
+            if(existedStonesUpdate == null)
+            { 
+                return NotFound();
+            }
             _unitOfWork.StoneRepository.Delete(existedStonesUpdate);
             _unitOfWork.Save();
             return Ok();

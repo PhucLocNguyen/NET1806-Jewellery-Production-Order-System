@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
 
-namespace Repository.Entity
+namespace Repository.Entity;
+
+public partial class MasterGemstone
 {
-    public partial class MasterGemstone
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int MasterGemstoneId { get; set; }
-        [Required]
-        public string Kind { get; set; }
-        [Required]
-        public string Size { get; set; }
-        [Required]
-        public decimal Price { get; set; }
+    public int MasterGemstoneId { get; set; }
 
-        public virtual ICollection<Design> Designs { get; set; } = new List<Design>();
-    }
+    public string Kind { get; set; } = null!;
+
+    public string? Size { get; set; }
+
+    public decimal? Price { get; set; }
+
+    public string? Clarity { get; set; }
+
+    public string? Cut { get; set; }
+
+    public virtual ICollection<Design> Designs { get; set; } = new List<Design>();
 }
-

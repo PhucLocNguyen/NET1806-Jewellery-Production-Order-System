@@ -3,7 +3,7 @@ using Repository.Entity;
 using System.Linq.Expressions;
 
 namespace Repository
-{ 
+{
     public class GenericRepository<TEntity> where TEntity : class
     {
         internal MyDbContext context;
@@ -57,6 +57,17 @@ namespace Repository
         public virtual TEntity GetByID(int id)
         {
             return dbSet.Find(id);
+        }
+        public virtual TEntity GetByID(int id, params Expression<Func<TEntity, object>>[] includes)
+        {
+            IQueryable<TEntity> query = dbSet;
+
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+
+            return query.FirstOrDefault(e=>EF.Property<int>(e,typeof(TEntity).Name+"Id")==id);
         }
 
         public virtual void Insert(TEntity entity)
