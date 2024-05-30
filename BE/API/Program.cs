@@ -21,6 +21,10 @@ namespace API
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DbContext"));
             });
+            builder.Services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
             builder.Services.AddTransient<UnitOfWork>();
 
             var app = builder.Build();

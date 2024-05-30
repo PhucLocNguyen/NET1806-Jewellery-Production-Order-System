@@ -21,7 +21,8 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public IActionResult GetMaterialById(int id)
         {
-            var Material = _unitOfWork.MaterialRepository.GetByID(id);
+            var Material = _unitOfWork.MaterialRepository.GetByID(id,m=>m.Designs);
+            
             if (Material == null)
             {
                 return NotFound();

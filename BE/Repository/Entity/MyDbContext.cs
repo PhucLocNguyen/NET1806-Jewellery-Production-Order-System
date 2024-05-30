@@ -204,9 +204,9 @@ public partial class MyDbContext : Microsoft.EntityFrameworkCore.DbContext
 
         modelBuilder.Entity<Stones>(entity =>
         {
-            entity.HasKey(e => e.StoneId).HasName("PK__Stones__59F240A0F68BB9CA");
+            entity.HasKey(e => e.StonesId).HasName("PK__Stones__59F240A0F68BB9CA");
 
-            entity.Property(e => e.StoneId).HasColumnName("StoneID");
+            entity.Property(e => e.StonesId).HasColumnName("StoneID");
             entity.Property(e => e.Kind).HasMaxLength(255);
             entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
             entity.Property(e => e.Size).HasMaxLength(255);

@@ -21,7 +21,7 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public IActionResult GetStonesById(int id)
         {
-            var Stones = _unitOfWork.StoneRepository.GetByID(id);
+            var Stones = _unitOfWork.StoneRepository.GetByID(id,p=>p.Designs);
             if(Stones == null)
             {
                 return NotFound();

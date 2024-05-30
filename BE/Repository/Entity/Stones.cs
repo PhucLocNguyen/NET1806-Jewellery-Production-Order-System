@@ -5,7 +5,7 @@ namespace Repository.Entity;
 
 public partial class Stones
 {
-    public int StoneId { get; set; }
+    public int StonesId { get; set; }
 
     public string Kind { get; set; } = null!;
 

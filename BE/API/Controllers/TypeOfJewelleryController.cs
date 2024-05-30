@@ -21,7 +21,7 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public IActionResult GetTypeOfJewelleryById(int id)
         {
-            var Blog = _unitOfWork.TypeOfJewellryRepository.GetByID(id);
+            var Blog = _unitOfWork.TypeOfJewellryRepository.GetByID(id,p=>p.Designs);
             if (Blog == null)
             {
                 return NotFound();
